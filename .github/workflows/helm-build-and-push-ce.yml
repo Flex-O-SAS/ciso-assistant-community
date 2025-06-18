@@ -61,4 +61,7 @@ jobs:
       - name: Push to GitHub Container Registry
         run: |
           cd charts
-          helm push "${PACKAGE_NAME}" oci://ghcr.io/intuitem/helm-charts/ce
+          PUSHPATH="oci://ghcr.io/${{github.repository_owner}}/${{github.event.repository.name}}"
+          PUSHPATH=${PUSHPATH,,} # Convert to lowercase
+          PUSHPATH=${PUSHPATH// /-} # Replace spaces with dashes
+          helm push "${PACKAGE_NAME}" ${PUSHPATH}/helm-charts/ce
