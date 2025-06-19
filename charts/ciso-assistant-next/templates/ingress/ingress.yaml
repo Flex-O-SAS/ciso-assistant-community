@@ -8,7 +8,6 @@ metadata:
   annotations:
     {{- toYaml . | nindent 4 }}
   {{- end }}
-  namespace: {{ .Release.Namespace }}
   labels:
     {{- include "ciso-assistant.labels" (dict "context" .) | nindent 4 }}
 spec:
