@@ -64,6 +64,11 @@ backend:
   # -- Backend pod annotations
   podAnnotations: {} # @schema additionalProperties: true
 
+  # -- Backend job configuration
+  job:
+    enabled: false
+    spec: {} # @schema additionalProperties: true
+
   ## Backend specific config
   config:
     # -- Admin email for initial configuration
@@ -210,6 +215,11 @@ frontend:
 
   # -- Frontend pod annotations
   podAnnotations: {} # @schema additionalProperties: true
+
+  # -- Frontend job configuration
+  job:
+    enabled: false
+    spec: {} # @schema additionalProperties: true
 
   ## Frontend specific config
   config:

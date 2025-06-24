@@ -1,0 +1,11 @@
+{{- if .Values.backend.job.enabled }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "ciso-assistant.fullname" . }}-backend-job
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "ciso-assistant.labels" (dict "context" . "component" "backend") | nindent 4 }}
+spec:
+  {{- toYaml .Values.backend.job.spec | nindent 2 }}
+{{- end }}

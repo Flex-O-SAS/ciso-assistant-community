@@ -108,6 +108,20 @@
                 "imagePullSecrets": {
                     "type": "array"
                 },
+                "job": {
+                    "additionalProperties": false,
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "spec": {
+                            "additionalProperties": true,
+                            "properties": {},
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
                 "name": {
                     "type": "string"
                 },
@@ -271,6 +285,20 @@
                 },
                 "imagePullSecrets": {
                     "type": "array"
+                },
+                "job": {
+                    "additionalProperties": false,
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "spec": {
+                            "additionalProperties": true,
+                            "properties": {},
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
                 },
                 "name": {
                     "type": "string"
